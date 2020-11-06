@@ -1,6 +1,6 @@
 {
   "name": "@ascent24/distributedqueue",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "a simple priority queue data structure",
   "keywords": [
     "queue",
@@ -9,20 +9,24 @@
     "queue  many servers"
   ],
   "homepage": "https://github.com/ascent24/distributedqueue",
+  "files": [
+    "dist/**/*"
+  ],
   "bugs": {
     "url": "https://github.com/ascent24/distributedqueue/issues"
   },
   "license": "MIT",
   "author": "Thiyaga <git@ascent24.io> (http://ascent24.io)",
-  "main": "//dist/src/index.js",
-  "types": "//dist/src/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/ascent24/distributedqueue"
   },
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.test.ts --timeout 10000",
-    "prepublish": "tsc"
+    "prepublish": "tsc",
+        "build": "tsc"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",

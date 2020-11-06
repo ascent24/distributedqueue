@@ -1,4 +1,8 @@
 import { IStorageHandler } from "./IStorageHandler";
+export * from './IStorageHandler';
+export * from './RedisHandler';
+export * from './memoryStorageHandler';
+export * from './redisStorageHandler';
 export declare class DistributedQueue {
     private _storageRepositary;
     private _queueName;
