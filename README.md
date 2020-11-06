@@ -6,7 +6,7 @@ A simple distributed queue data structure for Node.js. Backed by Redis.
 
 100% Fully covered in Mocha Unit Tests.
 
-Pull requests are well come.
+Pull requests are welcome.
 
 Heavily inspired by priorityqueuejs ``` https://github.com/janogonzalez/priorityqueuejs ```
 
