@@ -119,7 +119,7 @@ npm test
 
 ## About Ascent24 Technologies
 
-- [Ascent24 Technologies](https://www.ascent24.io/reach-us/), An Innovative digital products developer & service provider for Startups & well-established software companies. We are specialised in developing high performance Software Applications,  Specifically expert in Travel, Airline, Hotel Industry.
+- [Ascent24 Technologies](https://www.ascent24.io/reach-us/), An Innovative Software development company & service provider for Startups & well-established organisations. We are specialised in developing high performance Software Applications,  Specifically expert in Travel, Airline, Hotel Industry.
 
 ## Licence
 
