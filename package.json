@@ -1,6 +1,6 @@
 {
   "name": "@ascent24/distributedqueue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a simple priority queue data structure",
   "keywords": [
     "queue",
