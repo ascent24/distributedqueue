@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+           // "console":  "integratedTerminal",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}\\src\\index.ts",
+            "preLaunchTask": "tsc",
+           
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ],
+ 
+             //to open the Debug  Console by default. instead of terminal when we debug
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": [
+                "<node_internals>/**/*.js",
+                  "${workspaceFolder}/lib/**/*.js" 
+            
+            ] 
+            ,"outputCapture": "std", // <-- ADD THIS LINE
+        }
+    ]
+}

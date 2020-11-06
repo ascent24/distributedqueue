@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "**/.vs": true,
+//        "**/dist": true
+    },
+
+        "mochaExplorer.files": "test/**/*.ts",
+        "mochaExplorer.require": "ts-node/register",
+        "mochaExplorer.timeout": 100000,
+        "typescript.tsdk": "C:\\Users\\Ascent24-PC10\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib"
+}
