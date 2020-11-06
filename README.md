@@ -1,6 +1,11 @@
 # DistributedQueue
 
-![Ascent24](https://www.ascent24.io/wp-content/uploads/2019/04/Logo_160px.png)
+ 
+
+
+<p align="center">
+  <a href="https://ascent24.io/" target="blank"><img src="https://www.ascent24.io/wp-content/uploads/2019/04/Logo_160px.png" width="320" alt="Ascent24 Technologies Logo" /></a>
+</p>
 
 A simple distributed queue data structure for Node.js. Backed by Redis.
 
