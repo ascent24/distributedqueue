@@ -29,7 +29,7 @@ npm i @ascent24/distributedqueue
   let queuename = "<NameoftheQueue>"
 
   //same as ioredis connection object. 
-  redisConnObj = {  
+  let redisConnObj = {  
      host: "localhost",
      port: 6379,
   }
