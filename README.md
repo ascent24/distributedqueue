@@ -41,6 +41,21 @@ npm i @ascent24/distributedqueue
   await queue.peek()
   await queue.isEmpty() 
 ```
+## Example to test wit In-Memory Storage
+
+```ts
+    let storage = new MemoryStorage();
+    let queuename = "NameoftheQueue"
+
+     
+    var queue = new DistributedQueue(queuename, storage, undefined);
+    await queue.initializeStorage();
+    await queue.flush();//Becareful on this. will flush all items in the queue
+    await queue.enq('jano');
+    await queue.enq('valentina');
+    let x = await queue.peek()
+    console.log(x); //prints `jano`
+```
 
 ## API
 
