@@ -18,7 +18,7 @@ Heavily inspired by priorityqueuejs ``` https://github.com/janogonzalez/priority
 ## Installation
 
 ```
-npm install distributedqueue
+npm i @ascent24/distributedqueue
 ```
 
 ## Example
@@ -85,7 +85,7 @@ Returns the size of the distributed queue.
 ## Testing
 
 ```
-npm install
+npm install  
 npm test
 
 ```
