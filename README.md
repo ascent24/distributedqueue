@@ -1,12 +1,17 @@
 # DistributedQueue
 
-![Ascent24](https://www.ascent24.io/wp-content/uploads/2019/04/Logo_160px.png)
+ 
+
+
+<p align="center">
+  <a href="https://ascent24.io/" target="blank"><img src="https://www.ascent24.io/wp-content/uploads/2019/04/Logo_160px.png" width="160" alt="Ascent24 Technologies Logo" /></a>
+</p>
 
 A simple distributed queue data structure for Node.js. Backed by Redis.
 
 100% Fully covered in Mocha Unit Tests.
 
-Pull requests are well come.
+Pull requests are welcome.
 
 Heavily inspired by priorityqueuejs ``` https://github.com/janogonzalez/priorityqueuejs ```
 
