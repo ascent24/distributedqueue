@@ -4,4 +4,5 @@ export interface IStorageHandler {
     pushElement(value: any): Promise<number>;
     popElement(): Promise<any>;
     length(): Promise<number>;
+    flushStorage(): Promise<boolean>;
 }

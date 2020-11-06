@@ -142,8 +142,9 @@ describe('RedisStorage()', function () {
         });
         it('returns element, leftPop success key unknown key', async function () {
             let storage = new RedisHandler_1.RedisHandler(redisConnObj);
-            let resultToTest = await storage.leftPop(keyPrefix + "PushTest1");
-            chai_1.expect(resultToTest).to.be.null;
+            //let resultToTest = await storage.leftPop(keyPrefix + "PushTest1");
+            unittesthelper_1.expectThrowsAsync(await storage.leftPop, [keyPrefix + "PushTest1"], 'Queue is empty');
+            //expect(resultToTest).to.be.null;
         });
         it('checking Queue functionality', async function () {
             let storage = new RedisHandler_1.RedisHandler(redisConnObj);
@@ -152,12 +153,12 @@ describe('RedisStorage()', function () {
             let resultB = await storage.leftPop(keyPrefix + "PushTestA");
             let resultC = await storage.leftPop(keyPrefix + "PushTestA");
             let resultD = await storage.leftPop(keyPrefix + "PushTestA");
-            let resultNULL = await storage.leftPop(keyPrefix + "PushTestA");
+            unittesthelper_1.expectThrowsAsync(await storage.leftPop, [keyPrefix + "PushTest1"], 'Queue is empty');
             chai_1.expect(resultA).to.be.equal("A");
             chai_1.expect(resultB).to.be.equal("B");
             chai_1.expect(resultC).to.be.equal("C");
             chai_1.expect(resultD).to.be.equal("D");
-            chai_1.expect(resultNULL).to.be.null;
+            // expect(resultNULL).to.be.null;
         });
     });
     describe('#right Pop()', function () {
@@ -170,8 +171,9 @@ describe('RedisStorage()', function () {
         });
         it('returns element, rightPop success key unknown key', async function () {
             let storage = new RedisHandler_1.RedisHandler(redisConnObj);
-            let resultToTest = await storage.rightPop(keyPrefix + "PushTest1");
-            chai_1.expect(resultToTest).to.be.null;
+            //let resultToTest = await storage.rightPop(keyPrefix + "PushTest1");
+            unittesthelper_1.expectThrowsAsync(await storage.rightPop, [keyPrefix + "PushTest1"], 'Queue is empty');
+            //expect(resultToTest).to.be.null;
         });
         it('checking Queue functionality', async function () {
             let storage = new RedisHandler_1.RedisHandler(redisConnObj);
@@ -180,12 +182,11 @@ describe('RedisStorage()', function () {
             let resultB = await storage.rightPop(keyPrefix + "PushTestA");
             let resultC = await storage.rightPop(keyPrefix + "PushTestA");
             let resultD = await storage.rightPop(keyPrefix + "PushTestA");
-            let resultNULL = await storage.rightPop(keyPrefix + "PushTestA");
+            unittesthelper_1.expectThrowsAsync(await storage.rightPop, [keyPrefix + "PushTestA"], 'Queue is empty');
             chai_1.expect(resultA).to.be.equal("D");
             chai_1.expect(resultB).to.be.equal("C");
             chai_1.expect(resultC).to.be.equal("B");
             chai_1.expect(resultD).to.be.equal("A");
-            chai_1.expect(resultNULL).to.be.null;
         });
     });
     describe('#get List()', function () {

@@ -44,7 +44,7 @@ class RedisStorage {
      * @returns return new size of queue
      */
     async pushElement(value) {
-        let size = await this.redisStorage.rightPush(this.queueMeta.queueDataKey, [JSON.stringify(value)]);
+        let size = await this.redisStorage.rightPush(this.queueMeta.queueDataKey, [value]);
         return size;
     }
     /**
@@ -58,8 +58,17 @@ class RedisStorage {
      * @returns get the length of queue
      */
     async length() {
+        let key = this.queueMeta.queueDataKey;
         let size = await this.redisStorage.getListLength(this.queueMeta.queueDataKey);
         return size;
+    }
+    /**
+    * @returns deletes all the list data ONLY from queue. maintain other meta data etc.,
+    */
+    async flushStorage() {
+        let key = this.queueMeta.queueDataKey;
+        let size = await this.redisStorage.delete(this.queueMeta.queueDataKey);
+        return (size >= 0) ? true : false;
     }
 }
 exports.RedisStorage = RedisStorage;

@@ -167,8 +167,8 @@ class RedisHandler {
     async leftPop(key) {
         try {
             let result = await this.cacheClient.lpop(key);
-            if (result == "nil")
-                return null;
+            if (result == "nil" || result == null)
+                throw new Error("Queue is empty");
             return result;
         }
         catch (err) {
@@ -184,8 +184,8 @@ class RedisHandler {
     async rightPop(key) {
         try {
             let result = await this.cacheClient.rpop(key);
-            if (result == "nil")
-                return null;
+            if (result == "nil" || result == null)
+                throw new Error("Queue is empty");
             return result;
         }
         catch (err) {

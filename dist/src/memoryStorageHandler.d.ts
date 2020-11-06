@@ -20,4 +20,8 @@ export declare class MemoryStorage implements IStorageHandler {
      * @returns get the length of queue
      */
     length(): Promise<number>;
+    /**
+  * @returns deletes all the list data ONLY from queue. maintain other meta data etc.,
+  */
+    flushStorage(): Promise<boolean>;
 }

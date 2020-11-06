@@ -5,7 +5,12 @@ class DistributedQueue {
     constructor(queueName, storageRepositary, ConnObj) {
         this._queueName = queueName;
         this._storageRepositary = storageRepositary; // || DistributedQueue.DEFAULT_COMPARATOR;
-        this._storageRepositary.initializeStorage(queueName, ConnObj);
+        this._queueName = queueName;
+        this._connObj = ConnObj;
+    }
+    async initializeStorage() {
+        await this._storageRepositary.initializeStorage(this._queueName, this._connObj);
+        return true;
     }
     /**
     * Returns whether the  queue is empty or not.
@@ -43,7 +48,7 @@ class DistributedQueue {
     }
     ;
     /**
-     * Dequeues the top element of the priority queue.
+     * Dequeues the top element of the distributed queue.
      *
      * @return {Object}
      * @throws {Error} when the queue is empty.
@@ -54,7 +59,7 @@ class DistributedQueue {
     }
     ;
     /**
-   * Dequeues the top element of the priority queue.
+   * Dequeues the top element of the distributed queue.
    *
    * @return {Index} of the item just inserted
    * @throws {Error} when the queue is empty.
@@ -62,6 +67,14 @@ class DistributedQueue {
    */
     async enq(object) {
         return await this._storageRepositary.pushElement(object);
+    }
+    ;
+    /**
+     *
+     * remove all object from list. maintains the queue (meta data and others)
+     */
+    async flush() {
+        return await this._storageRepositary.flushStorage();
     }
     ;
 }

@@ -14,12 +14,14 @@ describe('DistributedQueue()', function () {
         it('returns true when the queue is empty', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             let isEmpty = await queue.isEmpty();
             expect(isEmpty).to.be(true);
         });
         it('returns false when the queue is not empty', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             await queue.enq('jano');
             expect(await queue.isEmpty()).to.be(false);
         });
@@ -28,6 +30,7 @@ describe('DistributedQueue()', function () {
         it('fails when the queue is empty', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             unittesthelper_1.expectThrowsAsync(queue.peek, [], 'DistributedQueue is empty');
             unittesthelper_1.expectThrowsAsync(queue.peek, [], 'DistributedQueue is empty');
             await queue.enq('jano');
@@ -35,6 +38,7 @@ describe('DistributedQueue()', function () {
         it('returns the top element of the queue', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             await queue.enq('jano');
             await queue.enq('valentina');
             await queue.enq('zombie');
@@ -49,11 +53,13 @@ describe('DistributedQueue()', function () {
         it('fails when the queue is empty', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             unittesthelper_1.expectThrowsAsync(queue.deq, [], 'DistributedQueue is empty');
         });
         it('dequeues the top element of the queue', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             await queue.enq('jano');
             await queue.enq('valentina');
             await queue.enq('zombie');
@@ -79,6 +85,7 @@ describe('DistributedQueue()', function () {
         it('not fails with only one element', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             await queue.enq('jano');
             expect(await queue.deq()).to.be('jano');
             expect(await queue.size()).to.be(0);
@@ -88,6 +95,7 @@ describe('DistributedQueue()', function () {
         it('enqueues an element at the end of the queue', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             await queue.enq('jano');
             await queue.enq('valentina');
             await queue.enq('fran');
@@ -97,6 +105,7 @@ describe('DistributedQueue()', function () {
         it('returns the new size of the queue', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             expect(await queue.enq('jano')).to.be(1);
         });
     });
@@ -104,11 +113,13 @@ describe('DistributedQueue()', function () {
         it('returns 0 when the queue is empty', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             expect(await queue.size()).to.be(0);
         });
         it('returns the size of the queue', async function () {
             let storage = new MemoryStorageHandler_1.MemoryStorage();
             var queue = new index_1.DistributedQueue(queuename, storage);
+            await queue.initializeStorage();
             await queue.enq('jano');
             await queue.enq('valentina');
             expect(await queue.size()).to.be(2);

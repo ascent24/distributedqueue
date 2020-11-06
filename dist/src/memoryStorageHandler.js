@@ -37,6 +37,13 @@ class MemoryStorage {
         let size = this.storage.size();
         return size;
     }
+    /**
+  * @returns deletes all the list data ONLY from queue. maintain other meta data etc.,
+  */
+    async flushStorage() {
+        let done = await this.storage.flush();
+        return done;
+    }
 }
 exports.MemoryStorage = MemoryStorage;
 /**
@@ -55,6 +62,11 @@ class Storage {
         this._elements = [];
         this._elements = [];
     }
+    flush() {
+        this._elements = [];
+        return true;
+    }
+    ;
     isEmpty() {
         return this.size() === 0;
     }

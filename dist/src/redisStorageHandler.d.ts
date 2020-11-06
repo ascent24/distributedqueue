@@ -1,7 +1,14 @@
 import { IStorageHandler } from "./IStorageHandler";
+import { RedisHandler } from "./RedisHandler";
+declare class QueueMeta {
+    createdAt: Date;
+    queueNameKey: string;
+    queueDataKey: string;
+    toString(): string;
+}
 export declare class RedisStorage implements IStorageHandler {
-    private redisStorage;
-    private queueMeta;
+    redisStorage: RedisHandler;
+    queueMeta: QueueMeta;
     /**
      *
      * @param name
@@ -17,7 +24,7 @@ export declare class RedisStorage implements IStorageHandler {
      * @param value push to last element to Queue. and return new size of queue
      * @returns return new size of queue
      */
-    pushElement(value: any): Promise<number>;
+    pushElement(value: string): Promise<number>;
     /**
      * @returns pops first element from Queue. remove the element from queue and return it.
      */
@@ -26,4 +33,9 @@ export declare class RedisStorage implements IStorageHandler {
      * @returns get the length of queue
      */
     length(): Promise<number>;
+    /**
+    * @returns deletes all the list data ONLY from queue. maintain other meta data etc.,
+    */
+    flushStorage(): Promise<boolean>;
 }
+export {};
