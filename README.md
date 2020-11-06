@@ -41,7 +41,7 @@ npm i @ascent24/distributedqueue
   await queue.peek()
   await queue.isEmpty() 
 ```
-## Example to test wit In-Memory Storage
+## Example to test with In-Memory Storage
 
 ```ts
     let storage = new MemoryStorage();
