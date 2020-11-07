@@ -129,12 +129,12 @@ npm test
 
 ## Stay in touch
 - Author - [Thiyaga](https://twitter.com/@thiyagak)
-- Website - [https://www.ascent24.io](https://ascent24.io/)
+- Website - [www.ascent24.io](https://www.ascent24.io/)
 - Twitter - [@Ascent24T](https://twitter.com/Ascent24T)
 
 ## About Ascent24 Technologies
 
-- [Ascent24 Technologies](https://www.ascent24.io/reach-us/), An Innovative Software development company & service provider for Startups & well-established organisations. We are specialised in developing high performance Software Applications and Mobile Applications for Android and iOS,  Specifically expert in Travel, Airline, Hotel Industry.
+- [Ascent24 Technologies](https://www.ascent24.io/reach-us/), An Innovative Software development company & service provider for Startups & well-established organisations. We are specialised in developing high performance Software Applications and Mobile Applications for Android and iOS,  Specifically expert in Travel, Airline, Hotel, Tourism Industry.
 
 ## Licence
 
