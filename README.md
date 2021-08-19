@@ -31,7 +31,7 @@ npm i @ascent24/distributedqueue
   //same as ioredis connection object. 
   let redisConnObj = {  
      host: "localhost",
-     port: 6379,
+     port:  6379,
   }
   var queue = new DistributedQueue(queuename, storage, redisConnObj);
   await queue.initializeStorage();
